@@ -1,0 +1,52 @@
+<div class=" w-75 m-auto my-5 p-5">
+    <form [formGroup]='FormGroup1' (ngSubmit)='formGroupData(FormGroup1)' >
+        <div *ngIf='errror' class=" alert alert-danger text-center">
+            <h1>{{errror}}</h1>
+        </div>
+        <div class="form-group">
+            <label class=" my-2" for="first_name"> Frist Name : </label>
+            <input formControlName='first_name' type="text" id="first_name" class=" form-control">
+            <div *ngIf='FormGroup1.get("first_name")?.errors != null &&FormGroup1.get("first_name")?.touched' class=" alert alert-danger my-2">
+                <p *ngIf='FormGroup1.get("first_name")?.errors?.required'> It Is Requierd</p>
+                <p *ngIf='FormGroup1.get("first_name")?.errors?.minlength'> Min Length 3</p>
+                <p *ngIf='FormGroup1.get("first_name")?.errors?.maxlength'> Max Length 10</p>
+            </div>
+        </div>
+         <div class="form-group">
+            <label class=" my-2" for="last_name"> Last Name : </label>
+            <input formControlName='last_name' type="text" id="last_name" class=" form-control">
+            <div *ngIf='FormGroup1.get("last_name")?.errors != null &&FormGroup1.get("last_name")?.touched' class=" alert alert-danger my-2">
+                <p *ngIf='FormGroup1.get("last_name")?.errors?.required'> It Is Requierd</p>
+                <p *ngIf='FormGroup1.get("last_name")?.errors?.minlength'>Min Length 3</p>
+                <p *ngIf='FormGroup1.get("last_name")?.errors?.maxlength'> Max Length 10</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class=" my-2" for="age"> Age : </label>
+            <input formControlName='age' type="number" id="age" class=" form-control">
+            <div *ngIf='FormGroup1.get("age")?.errors != null &&FormGroup1.get("age")?.touched' class=" alert alert-danger my-2">
+                <p *ngIf='FormGroup1.get("age")?.errors?.required'> It Is Requierd</p>
+                <p *ngIf='FormGroup1.get("age")?.errors?.min'>Min 16</p>
+                <p *ngIf='FormGroup1.get("age")?.errors?.max'> Max 80</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class=" my-2" for="email"> Email : </label>
+            <input formControlName='email' type="email" id="email" class=" form-control">
+            <div *ngIf='FormGroup1.get("email")?.errors != null &&FormGroup1.get("email")?.touched' class=" alert alert-danger my-2">
+                <p *ngIf='FormGroup1.get("email")?.errors?.required'> It Is Requierd</p>
+                <p *ngIf='FormGroup1.get("email")?.errors?.email'>It Is UnAvilable</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class=" my-2" for="password"> Password : </label>
+            <input formControlName='password' type="password" id="password" class=" form-control">
+            <div *ngIf='FormGroup1.get("password")?.errors != null &&FormGroup1.get("password")?.touched' class=" alert alert-danger my-2">
+                <p *ngIf='FormGroup1.get("password")?.errors?.required'> It Is Requierd</p>
+                <p *ngIf='FormGroup1.get("password")?.errors?.pattern'>It Must Start Upper Case </p>
+            </div>
+        </div>
+
+        <button [disabled]='FormGroup1.invalid' class="my-4 btn btn-outline-primary">SignUp</button>
+    </form>
+</div>

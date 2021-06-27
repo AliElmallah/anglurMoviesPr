@@ -1,0 +1,23 @@
+<div class=" my-5 container text-center p-5">
+
+  <div class=" my-5">
+    <hr class=" my-2"/>
+  <h2>
+    Trending Pepole <br />
+    To Watch Right Now
+  </h2>
+  <h6>most watched Pepole by dayes</h6>
+  <hr class=" my-2"/>
+  </div>
+
+  <div class="row">
+    <div *ngFor="let person of trindingPerson" class="col-md-3">
+
+      <img class="w-100" [src]="prifiex + person.profile_path" alt="" />
+      <h3 class="my-2 h4">{{ person.name }}</h3>
+      <h5 class="h6 w-100">{{ person.known_for[1].original_title }}</h5>
+
+  </div>
+
+  </div>
+ </div>

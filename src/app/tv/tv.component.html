@@ -1,0 +1,25 @@
+<div class=" my-5 container text-center p-5">
+
+  <div class=" my-5">
+    <hr class=" my-2"/>
+  <h2>
+    Trending TV <br />
+    To Watch Right Now
+  </h2>
+  <h6>most watched TV by dayes</h6>
+  <hr class=" my-2"/>
+  </div>
+
+  <div class="row">
+    <div *ngFor="let tv of trindingTv" class="col-md-3 my-3 position-relative">
+
+      <img class="w-100" [src]="prifiex + tv.poster_path" alt="" />
+      <h3 class="h4 my-2">{{ tv.original_name }}</h3>
+      <div class="rounded-pill px-2 vote position-absolute">
+        <h5>{{ tv.vote_average }}</h5>
+      </div>
+
+  </div>
+
+  </div>
+ </div>

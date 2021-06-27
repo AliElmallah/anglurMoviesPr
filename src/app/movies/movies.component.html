@@ -1,0 +1,38 @@
+<div class=" my-5 container text-center p-5">
+
+  <div class=" my-5">
+    <hr class=" my-2"/>
+  <h2>
+    Trending Movies <br />
+    To Watch Right Now
+  </h2>
+  <h6>most watched Movies by dayes</h6>
+  <hr class=" my-2"/>
+  </div>
+
+  <div class="row">
+    <div *ngFor="let movie of trindingMovies" class="col-md-3 position-relative my-3">
+
+      <a [routerLink]="['/moviedetails' , movie.id]">
+        <img class="w-100" [src]="prifiex + movie.poster_path" alt="" />
+        <h3 class="h5 my-2">{{ movie.title }}</h3>
+        <!-- <p> {{movie.overview}}</p> -->
+        <div
+          class="
+            rounded-pill
+            vote
+            position-absolute
+            d-flex
+            justify-content-center
+            align-items-center
+          "
+        >
+          <h5>{{ movie.vote_average }}</h5>
+        </div>
+
+      </a>
+
+  </div>
+
+  </div>
+ </div>

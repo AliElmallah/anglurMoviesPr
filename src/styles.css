@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #131722;
+  color: #fff;
+}
+
+.navbar {
+  color: #fff;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.navbar a:hover {
+  color: #1c6a81;
+}
+/*# sourceMappingURL=styles.css.map */

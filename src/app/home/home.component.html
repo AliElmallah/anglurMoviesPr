@@ -1,0 +1,89 @@
+<app-homeheader></app-homeheader>
+
+<div class="container">
+<!-- <input  type="text" (keyup)="search($event)"> -->
+  <div class="row">
+    <div class="col-md-4 d-flex align-items-center">
+      <div>
+        <hr class="w-25" />
+        <h2>
+          Trending Movies <br />
+          To Watch Right Now
+        </h2>
+        <h6>most watched movies by dayes</h6>
+        <hr class="w-75" />
+      </div>
+    </div>
+    <div
+      *ngFor="let movie of trindingMoviesFiltter"
+      class="col-md-2 position-relative"
+    >
+    <a [routerLink]="['/moviedetails' , movie.id]">
+      <img class="w-100" [src]="prifiex + movie.poster_path" alt="" />
+      <h3 class="h5 my-2">{{ movie.title }}</h3>
+      <!-- <p> {{movie.overview}}</p> -->
+      <div
+        class="
+          rounded-pill
+          vote
+          position-absolute
+          d-flex
+          justify-content-center
+          align-items-center
+        "
+      >
+        <h5>{{ movie.vote_average }}</h5>
+      </div>
+    
+    </a>
+        
+    </div>
+  </div>
+
+  <div class="my-5 py-5"></div>
+
+  <div class="row">
+    <div class="col-md-4 d-flex align-items-center">
+      <div>
+        <hr class="w-25" />
+        <h2>
+          Trending TV <br />
+          To Watch Right Now
+        </h2>
+        <h6>most watched TV by dayes</h6>
+        <hr class="w-75" />
+      </div>
+    </div>
+    <div *ngFor="let tv of trindingTv" class="col-md-2 position-relative">
+        <img class="w-100" [src]="prifiex + tv.poster_path" alt="" />
+        <h3 class="h4 my-2">{{ tv.original_name }}</h3>
+        <!-- <p> {{tv.overview}}</p> -->
+        <div class="rounded-pill px-2 vote position-absolute">
+          <h5>{{ tv.vote_average }}</h5>
+        </div>
+      
+    </div>
+  </div>
+  <div class="my-5 py-5"></div>
+
+  <div class="row">
+    <div class="col-md-4 d-flex align-items-center">
+      <div>
+        <hr class="w-25" />
+        <h2>
+          Trending Pepole <br />
+          To Watch Right Now
+        </h2>
+        <h6>most watched Pepole by dayes</h6>
+        <hr class="w-75" />
+      </div>
+    </div>
+    <div *ngFor="let person of trindingPerson" class="col-md-2">
+      
+        <img class="w-100" [src]="prifiex + person.profile_path" alt="" />
+        <h3 class="my-2 h4">{{ person.name }}</h3>
+        <h5 class="h6 w-100">{{ person.known_for[1].original_title }}</h5>
+      
+    </div>
+  </div>
+</div>
