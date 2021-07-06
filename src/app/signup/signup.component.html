@@ -1,5 +1,10 @@
-<div class=" w-75 m-auto my-5 p-5">
-    <form [formGroup]='FormGroup1' (ngSubmit)='formGroupData(FormGroup1)' >
+<div class=" bg-sign ">
+<div class="sign-layer p-5 ">
+
+<div class=" w-50 border rounded-3 m-auto p-5">
+
+  <h2 class=" p-3 text-center title-s"> SignUp :</h2>
+    <form [formGroup]='FormGroup1' (ngSubmit)='formGroupData(FormGroup1)' class=" px-3" >
         <div *ngIf='errror' class=" alert alert-danger text-center">
             <h1>{{errror}}</h1>
         </div>
@@ -47,6 +52,8 @@
             </div>
         </div>
 
-        <button [disabled]='FormGroup1.invalid' class="my-4 btn btn-outline-primary">SignUp</button>
+        <button [disabled]='FormGroup1.invalid' class=" form-control my-4 btn btn-primary">SignUp</button>
     </form>
+</div>
+</div>
 </div>
