@@ -1,14 +1,14 @@
 <div class=" bg-sign ">
-<div class="sign-layer p-5 ">
+<div class="sign-layer py-5 ">
 
-<div class=" w-50 border rounded-3 m-auto p-5">
+<div class=" w-50 border rounded-3 m-auto">
 
   <h2 class=" p-3 text-center title-s"> SignUp :</h2>
-    <form [formGroup]='FormGroup1' (ngSubmit)='formGroupData(FormGroup1)' class=" px-3" >
+    <form [formGroup]='FormGroup1' (ngSubmit)='formGroupData(FormGroup1)'  >
         <div *ngIf='errror' class=" alert alert-danger text-center">
             <h1>{{errror}}</h1>
         </div>
-        <div class="form-group">
+        <div class="form-group px-3">
             <label class=" my-2" for="first_name"> Frist Name : </label>
             <input formControlName='first_name' type="text" id="first_name" class=" form-control">
             <div *ngIf='FormGroup1.get("first_name")?.errors != null &&FormGroup1.get("first_name")?.touched' class=" alert alert-danger my-2">
@@ -17,7 +17,7 @@
                 <p *ngIf='FormGroup1.get("first_name")?.errors?.maxlength'> Max Length 10</p>
             </div>
         </div>
-         <div class="form-group">
+         <div class="form-group px-3">
             <label class=" my-2" for="last_name"> Last Name : </label>
             <input formControlName='last_name' type="text" id="last_name" class=" form-control">
             <div *ngIf='FormGroup1.get("last_name")?.errors != null &&FormGroup1.get("last_name")?.touched' class=" alert alert-danger my-2">
@@ -26,7 +26,7 @@
                 <p *ngIf='FormGroup1.get("last_name")?.errors?.maxlength'> Max Length 10</p>
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-group px-3">
             <label class=" my-2" for="age"> Age : </label>
             <input formControlName='age' type="number" id="age" class=" form-control">
             <div *ngIf='FormGroup1.get("age")?.errors != null &&FormGroup1.get("age")?.touched' class=" alert alert-danger my-2">
@@ -35,7 +35,7 @@
                 <p *ngIf='FormGroup1.get("age")?.errors?.max'> Max 80</p>
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-group px-3">
             <label class=" my-2" for="email"> Email : </label>
             <input formControlName='email' type="email" id="email" class=" form-control">
             <div *ngIf='FormGroup1.get("email")?.errors != null &&FormGroup1.get("email")?.touched' class=" alert alert-danger my-2">
@@ -43,7 +43,7 @@
                 <p *ngIf='FormGroup1.get("email")?.errors?.email'>It Is UnAvilable</p>
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-group px-3">
             <label class=" my-2" for="password"> Password : </label>
             <input formControlName='password' type="password" id="password" class=" form-control">
             <div *ngIf='FormGroup1.get("password")?.errors != null &&FormGroup1.get("password")?.touched' class=" alert alert-danger my-2">
@@ -52,8 +52,12 @@
             </div>
         </div>
 
-        <button [disabled]='FormGroup1.invalid' class=" form-control my-4 btn btn-primary">SignUp</button>
+        <div class="form-group w-50 mx-auto my-4 px-3">
+          <button [disabled]='FormGroup1.invalid' class=" form-control  btn btn-primary">SignUp</button>
+        </div>
     </form>
 </div>
+
+
 </div>
 </div>

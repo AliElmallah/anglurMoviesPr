@@ -1,16 +1,16 @@
 <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" routerLink="home"><h1>NOXE</h1> </a>
-      
+
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="fas fa-bars"></span>
+        <span class=" text-light fas fa-bars"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a *ngIf='isLogin' class="nav-link " routerLink="home">Home</a>
           </li>
-          
+
           <li class="nav-item">
             <a *ngIf='isLogin' class="nav-link " routerLink="movies">Movies</a>
           </li>
@@ -19,9 +19,9 @@
           </li>
           <li class="nav-item">
             <a *ngIf='isLogin' class="nav-link " routerLink="people">People</a>
-          </li>          
+          </li>
         </ul>
-       
+
         <form *ngIf='isLogin' class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         </form>
@@ -42,11 +42,10 @@
             </li>
             <li class="nav-item">
               <a *ngIf='isLogin'  (click)='isLoogin()'  class=" out nav-link " >SignOut</a>
-            </li>   
+            </li>
           </ul>
 
       </div>
     </div>
   </nav>
 
- 

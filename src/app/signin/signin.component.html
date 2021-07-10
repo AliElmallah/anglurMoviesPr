@@ -1,14 +1,14 @@
 <div class=" bg-sign ">
-  <div class="sign-layer p-5 ">
+  <div class="sign-layer py-5 ">
 
-<div class=" w-50 rounded-3 m-auto border   p-5">
+<div class=" w-50 rounded-3 m-auto border ">
   <h2 class=" text-center p-3 title-s"> LogIn : </h2>
     <form [formGroup]='FormGroup2' class=" px-3" (ngSubmit)='formGroupData2(FormGroup2)'>
         <div *ngIf='errror' class=" alert alert-danger text-center">
             <h1>{{errror}}</h1>
         </div>
 
-        <div class="form-group">
+        <div class="form-group px-3">
             <label class=" my-2" for="email"> Email : </label>
             <input formControlName='email' type="email" id="email" class=" form-control">
             <div *ngIf='FormGroup2.get("email")?.errors != null &&FormGroup2.get("email")?.touched' class=" alert alert-danger my-2">
@@ -16,7 +16,7 @@
                 <p *ngIf='FormGroup2.get("email")?.errors?.email'>It Is UnAvilable</p>
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-group px-3">
             <label class=" my-2" for="password"> Password : </label>
             <input formControlName='password' type="password" id="password" class=" form-control">
             <div *ngIf='FormGroup2.get("password")?.errors != null &&FormGroup2.get("password")?.touched' class=" alert alert-danger my-2">
@@ -25,7 +25,10 @@
             </div>
         </div>
 
-        <button [disabled]='FormGroup2.invalid' class=" form-control my-4 btn btn-primary">LogIn</button>
+        <div class="form-group my-4 w-50 mx-auto ">
+          <button [disabled]='FormGroup2.invalid' class=" form-control  btn btn-primary">LogIn</button>
+
+        </div>
     </form>
 </div>
 </div>
